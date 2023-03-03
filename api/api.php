@@ -1,4 +1,7 @@
 <?php
+    header('Access-Control-Allow-Origin: *');
+    header('Content-Type: application/json; charset=utf-8');
+    
     $nombre = (string) "Miguel Angel Castro Escamilla";
     $edad = (int) 23;
     $altura = (double) 1.63;
@@ -18,12 +21,16 @@
         "Kilometraje" => 102.564
     ];
     
-    echo "Nombre: $nombre<br>";
-    echo "Edad: $edad<br>";
-    echo "Altura: $altura<br>";
-    echo "Es el profesor: $esProfesor<br>";
-    echo "Pasa tiempos: ".json_encode($pasaTiempo)."<br>";
-    echo "Veiculo: ".json_encode($veiculo);
+    $json = (object) [];
+    $json->NOMBRE = $nombre;
+    $json->EDAD = $edad;
+    $json->ALTURA = $altura;
+    $json->ESPROFESOR = $esProfesor;
+    $json->PASATIEMPO = $pasaTiempo;
+    $json->VEICULO = $veiculo;
+
+    echo json_encode($json, JSON_PRETTY_PRINT);
+    
 ?>
 
 
