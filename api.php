@@ -28,6 +28,7 @@
     $json->ESPROFESOR = $esProfesor;
     $json->PASATIEMPO = $pasaTiempo;
     $json->VEICULO = $veiculo;
+    $json->SERVER = $_SERVER['HTTP_HOST'];
 
     echo json_encode($json, JSON_PRETTY_PRINT);
     
